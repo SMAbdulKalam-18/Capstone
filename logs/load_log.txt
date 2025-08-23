@@ -1,0 +1,5 @@
+Customers: 50999 rows loaded
+Restaurants: 50999 rows loaded
+Delivery_Partners: 50999 rows loaded
+Orders: 50999 rows loaded
+Order_Items: 50999 rows loaded
