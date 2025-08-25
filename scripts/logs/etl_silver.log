@@ -1,0 +1,54 @@
+2025-08-25 15:49:42,456 INFO:ETL Silver process started.
+2025-08-25 15:49:42,469 INFO:Audit table ready.
+2025-08-25 15:49:42,469 INFO:Starting Silver layer ETL...
+2025-08-25 15:49:42,469 ERROR:Error building table Customers: [Errno 2] No such file or directory: 'sql/silver_customers.sql'
+2025-08-25 15:49:42,469 ERROR:Error building table Restaurants: [Errno 2] No such file or directory: 'sql/silver_restaurants.sql'
+2025-08-25 15:49:42,469 ERROR:Error building table Delivery_Partners: [Errno 2] No such file or directory: 'sql/silver_delivery_partners.sql'
+2025-08-25 15:49:42,469 ERROR:Error building table Orders: [Errno 2] No such file or directory: 'sql/silver_orders.sql'
+2025-08-25 15:49:42,470 ERROR:Error building table Order_Items: [Errno 2] No such file or directory: 'sql/silver_order_items.sql'
+2025-08-25 15:49:42,470 INFO:Starting DQ checks...
+2025-08-25 15:49:42,470 ERROR:Error in DQ check for Customers: relation "silver.Customers" does not exist
+LINE 1: SELECT "Customer_id" FROM silver."Customers" GROUP BY "Custo...
+                                  ^
+
+2025-08-25 15:49:42,471 ERROR:Error in DQ check for Customers: relation "silver.Customers" does not exist
+LINE 1: SELECT * FROM silver."Customers" WHERE "Email" NOT LIKE '%@%...
+                      ^
+
+2025-08-25 15:49:42,472 ERROR:Error in DQ check for Restaurants: relation "silver.Restaurants" does not exist
+LINE 1: SELECT "Restaurant_id" FROM silver."Restaurants" GROUP BY "R...
+                                    ^
+
+2025-08-25 15:49:42,472 ERROR:Error in DQ check for Restaurants: relation "silver.Restaurants" does not exist
+LINE 1: SELECT * FROM silver."Restaurants" WHERE "Rating" NOT BETWEE...
+                      ^
+
+2025-08-25 15:49:42,473 ERROR:Error in DQ check for Delivery_Partners: relation "silver.Delivery_Partners" does not exist
+LINE 1: SELECT "Partner_id" FROM silver."Delivery_Partners" GROUP BY...
+                                 ^
+
+2025-08-25 15:49:42,473 ERROR:Error in DQ check for Delivery_Partners: relation "silver.Delivery_Partners" does not exist
+LINE 1: SELECT * FROM silver."Delivery_Partners" WHERE "Rating" NOT ...
+                      ^
+
+2025-08-25 15:49:42,474 ERROR:Error in DQ check for Orders: relation "silver.Orders" does not exist
+LINE 1: SELECT "Order_id" FROM silver."Orders" GROUP BY "Order_id" H...
+                               ^
+
+2025-08-25 15:49:42,475 ERROR:Error in DQ check for Orders: relation "silver.Orders" does not exist
+LINE 2:             SELECT * FROM silver."Orders"
+                                  ^
+
+2025-08-25 15:49:42,475 ERROR:Error in DQ check for Order_Items: relation "silver.Order_Items" does not exist
+LINE 1: SELECT "Order_item_id" FROM silver."Order_Items" GROUP BY "O...
+                                    ^
+
+2025-08-25 15:49:42,476 ERROR:Error in DQ check for Order_Items: relation "silver.Order_Items" does not exist
+LINE 1: SELECT * FROM silver."Order_Items" WHERE "Quantity"<=0 OR "P...
+                      ^
+
+2025-08-25 15:49:42,477 ERROR:Error in DQ check for Order_Items: relation "silver.Order_Items" does not exist
+LINE 1: SELECT * FROM silver."Order_Items" WHERE "Order_id" NOT IN (...
+                      ^
+
+2025-08-25 15:49:42,477 INFO:ETL Silver process completed. Duration: 0:00:00.020621
