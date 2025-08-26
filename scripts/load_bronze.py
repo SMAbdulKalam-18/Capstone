@@ -27,8 +27,7 @@ tables = {
     "Customers": ["Customer_id", "First_Name", "Last_Name", "Email", "Phone_number", "City", "Signup_date"],
     "Restaurants": ["Restaurant_id", "Name", "Cuisine_type", "City", "Rating", "Open_date"],
     "Delivery_Partners": ["Partner_id", "Partner_name", "Phone_number", "City", "Vehicle_type", "Rating", "Join_date"],
-    "Orders": ["Order_id", "Customer_id", "Restaurant_id", "Order_date", "Order_amount", "Payment_mode",
-               "Delivery_status"],
+    "Orders": ["Order_id", "Customer_id","Customer_City", "Restaurant_id","Partner_id", "Order_date", "Delivery_status", "Payment_mode","Order_amount"],
     "Order_Items": ["Order_item_id", "Order_id", "Menu_item", "Quantity", "Price"]
 }
 

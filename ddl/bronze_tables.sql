@@ -1,17 +1,17 @@
 -- 1. Customers
 CREATE TABLE bronze."Customers" (
-    "Customer_id" SERIAL PRIMARY KEY,
+    "Customer_id" VARCHAR(20),
     "First_Name" VARCHAR(50),
     "Last_Name" VARCHAR(50),
     "Email" VARCHAR(100),
-    "Phone_number" VARCHAR(15),
+    "Phone_number" VARCHAR(20),
     "City" VARCHAR(50),
     "Signup_date" DATE
 );
 
 -- 2. Restaurants
 CREATE TABLE bronze."Restaurants" (
-    "Restaurant_id" SERIAL PRIMARY KEY,
+    "Restaurant_id" VARCHAR(20),
     "Name" VARCHAR(100),
     "Cuisine_type" VARCHAR(50),
     "City" VARCHAR(50),
@@ -21,30 +21,33 @@ CREATE TABLE bronze."Restaurants" (
 
 -- 3. Delivery_Partners
 CREATE TABLE bronze."Delivery_Partners" (
-    "Partner_id" SERIAL PRIMARY KEY,
+    "Partner_id" VARCHAR(20),
     "Partner_name" VARCHAR(100),
-    "Phone_number" VARCHAR(15),
+    "Phone_number" VARCHAR(20),
     "City" VARCHAR(50),
     "Vehicle_type" VARCHAR(50),
     "Rating" NUMERIC(3,2),
     "Join_date" DATE
 );
 
+
 -- 4. Orders
 CREATE TABLE bronze."Orders" (
-    "Order_id" SERIAL PRIMARY KEY,
-    "Customer_id" INT REFERENCES bronze."Customers"("Customer_id"),
-    "Restaurant_id" INT REFERENCES bronze."Restaurants"("Restaurant_id"),
-    "Order_date" DATE,
-    "Order_amount" NUMERIC(10,2),
+    "Order_id" VARCHAR(20),
+    "Customer_id" VARCHAR(20),
+    "Customer_City" VARCHAR(50),
+    "Restaurant_id" VARCHAR(20),
+    "Partner_id" VARCHAR(20),
+    "Order_date" TIMESTAMP,
+    "Delivery_status" VARCHAR(20),
     "Payment_mode" VARCHAR(50),
-    "Delivery_status" VARCHAR(20)  -- 'Delivered' / 'Cancelled'
+    "Order_amount" NUMERIC(10,2)
 );
 
 -- 5. Order_Items
 CREATE TABLE bronze."Order_Items" (
-    "Order_item_id" SERIAL PRIMARY KEY,
-    "Order_id" INT REFERENCES bronze."Orders"("Order_id"),
+    "Order_item_id" VARCHAR(20),
+    "Order_id" VARCHAR(20),
     "Menu_item" VARCHAR(100),
     "Quantity" INT,
     "Price" NUMERIC(10,2)
