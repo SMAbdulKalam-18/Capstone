@@ -52,3 +52,66 @@ LINE 1: SELECT * FROM silver."Order_Items" WHERE "Order_id" NOT IN (...
                       ^
 
 2025-08-25 15:49:42,477 INFO:ETL Silver process completed. Duration: 0:00:00.020621
+2025-08-26 16:54:01,770 INFO:ETL Silver process started.
+2025-08-26 16:54:01,771 INFO:Audit table ready.
+2025-08-26 16:54:01,771 INFO:Starting Silver layer ETL...
+2025-08-26 16:54:01,771 ERROR:Error building table Customers: [Errno 2] No such file or directory: 'sql/silver_customers.sql'
+2025-08-26 16:54:01,772 ERROR:Error building table Restaurants: [Errno 2] No such file or directory: 'sql/silver_restaurants.sql'
+2025-08-26 16:54:01,772 ERROR:Error building table Delivery_Partners: [Errno 2] No such file or directory: 'sql/silver_delivery_partners.sql'
+2025-08-26 16:54:01,772 ERROR:Error building table Orders: [Errno 2] No such file or directory: 'sql/silver_orders.sql'
+2025-08-26 16:54:01,772 ERROR:Error building table Order_Items: [Errno 2] No such file or directory: 'sql/silver_order_items.sql'
+2025-08-26 16:54:01,772 INFO:Starting DQ cleaning...
+2025-08-26 16:54:01,773 ERROR:Error cleaning Customers (Null PK): relation "silver.Customers" does not exist
+LINE 1: SELECT row_to_json(t) FROM (SELECT * FROM silver."Customers"...
+                                                  ^
+
+2025-08-26 16:54:01,774 ERROR:Error cleaning Customers (Invalid Email): relation "silver.Customers" does not exist
+LINE 1: SELECT row_to_json(t) FROM (SELECT * FROM silver."Customers"...
+                                                  ^
+
+2025-08-26 16:54:01,774 ERROR:Error cleaning Customers (Duplicate PK): relation "silver.Customers" does not exist
+LINE 1: SELECT row_to_json(t) FROM (SELECT * FROM silver."Customers"...
+                                                  ^
+
+2025-08-26 16:54:01,775 ERROR:Error cleaning Restaurants (Invalid Rating): relation "silver.Restaurants" does not exist
+LINE 1: SELECT row_to_json(t) FROM (SELECT * FROM silver."Restaurant...
+                                                  ^
+
+2025-08-26 16:54:01,775 ERROR:Error cleaning Delivery_Partners (Invalid Rating): relation "silver.Delivery_Partners" does not exist
+LINE 1: SELECT row_to_json(t) FROM (SELECT * FROM silver."Delivery_P...
+                                                  ^
+
+2025-08-26 16:54:01,776 ERROR:Error cleaning Orders (Duplicate PK): relation "silver.Orders" does not exist
+LINE 1: SELECT row_to_json(t) FROM (SELECT * FROM silver."Orders" o ...
+                                                  ^
+
+2025-08-26 16:54:01,776 ERROR:Error cleaning Orders (Invalid FK or enum): relation "silver.Orders" does not exist
+LINE 3:                     SELECT * FROM silver."Orders" o
+                                          ^
+
+2025-08-26 16:54:01,776 ERROR:Error cleaning Order_Items (Invalid Quantity/Price): relation "silver.Order_Items" does not exist
+LINE 1: SELECT row_to_json(t) FROM (SELECT * FROM silver."Order_Item...
+                                                  ^
+
+2025-08-26 16:54:01,777 ERROR:Error cleaning Order_Items (Invalid FK): relation "silver.Order_Items" does not exist
+LINE 1: SELECT row_to_json(t) FROM (SELECT * FROM silver."Order_Item...
+                                                  ^
+
+2025-08-26 16:54:01,777 INFO:ETL Silver process completed. Duration: 0:00:00.006304
+2025-08-26 17:08:07,277 INFO:Schemas and audit table ready.
+2025-08-26 17:19:54,294 INFO:Schemas and audit table ready.
+2025-08-26 17:22:25,709 INFO:Schemas and audit table ready.
+2025-08-26 17:31:02,606 INFO:Schemas and audit table ready.
+2025-08-26 17:35:43,914 INFO:Schemas and audit table ready.
+2025-08-26 17:37:32,952 INFO:Schemas and audit table ready.
+2025-08-26 17:39:05,568 INFO:Schemas and audit table ready.
+2025-08-26 18:00:48,752 INFO:Schemas and audit table ready.
+2025-08-26 18:00:49,330 INFO:Silver table customers built successfully.
+2025-08-26 18:00:49,707 INFO:Silver table restaurants built successfully.
+2025-08-26 18:01:34,075 INFO:Schemas and audit table ready.
+2025-08-26 18:01:34,629 INFO:Silver table customers built successfully.
+2025-08-26 18:01:35,129 INFO:Silver table restaurants built successfully.
+2025-08-26 18:01:35,624 INFO:Silver table orders built successfully.
+2025-08-26 18:01:35,945 INFO:Silver table order_items built successfully.
+2025-08-26 18:01:36,277 INFO:Silver table delivery_partners built successfully.
+2025-08-26 18:01:36,277 INFO:Silver layer build complete.
