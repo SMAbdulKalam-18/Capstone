@@ -1,0 +1,20 @@
+2025-08-28 01:22:58,031 INFO:ETL Pipeline Started...
+2025-08-28 01:23:13,789 INFO:Schemas and audit table ready.
+2025-08-28 01:23:14,512 INFO:Silver table customers built successfully.
+2025-08-28 01:23:15,196 INFO:Silver table restaurants built successfully.
+2025-08-28 01:23:15,787 INFO:Silver table orders built successfully.
+2025-08-28 01:23:16,148 INFO:Silver table order_items built successfully.
+2025-08-28 01:23:16,696 INFO:Silver table delivery_partners built successfully.
+2025-08-28 01:23:16,708 INFO:Creating Gold tables...
+2025-08-28 01:23:16,713 INFO:Gold layer tables created successfully!
+2025-08-28 01:23:16,713 INFO:Starting reconciliation...
+2025-08-28 01:23:16,724 INFO:total_orders: 84609
+2025-08-28 01:23:16,724 INFO:gold_total_orders: 1
+2025-08-28 01:23:16,733 INFO:total_customers: 29968
+2025-08-28 01:23:16,733 INFO:gold_total_customers: 384
+2025-08-28 01:23:16,741 INFO:total_restaurants: 30190
+2025-08-28 01:23:16,741 INFO:gold_total_restaurants: 864
+2025-08-28 01:23:16,750 INFO:total_partners: 31899
+2025-08-28 01:23:16,750 INFO:gold_total_partners: 3
+2025-08-28 01:23:16,750 INFO:Reconciliation completed successfully!
+2025-08-28 01:23:16,750 INFO:ETL Pipeline Completed Successfully!

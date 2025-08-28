@@ -1,0 +1,12 @@
+2025-08-28 01:04:20,549 INFO:Creating Gold tables...
+2025-08-28 01:04:20,555 INFO:Gold layer tables created successfully!
+2025-08-28 01:04:20,555 INFO:Starting reconciliation...
+2025-08-28 01:04:20,565 INFO:total_orders: 84609
+2025-08-28 01:04:20,566 INFO:gold_total_orders: 1
+2025-08-28 01:04:20,571 INFO:total_customers: 29968
+2025-08-28 01:04:20,572 INFO:gold_total_customers: 384
+2025-08-28 01:04:20,575 INFO:total_restaurants: 30190
+2025-08-28 01:04:20,575 INFO:gold_total_restaurants: 864
+2025-08-28 01:04:20,579 INFO:total_partners: 31899
+2025-08-28 01:04:20,579 INFO:gold_total_partners: 3
+2025-08-28 01:04:20,579 INFO:Reconciliation completed successfully!
